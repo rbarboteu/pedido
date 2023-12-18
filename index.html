@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Recado</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffe6e6;
+    }
+    #botoes-container {
+      text-align: center;
+      color: #ff4d4d;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    #sim-btn {
+      background-color: #ff8080;
+      color: white;
+    }
+    #nao-btn {
+      background-color: #ffb3b3;
+      color: #cc3333;
+      position: absolute;
+      transition: 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="botoes-container">
+    <h1>Quer namorar comigo?</h1>
+    <button id="sim-btn" onclick="window.location.href='https://www.youtube.com/watch?v=5I5VP-pElEA'">Sim</button>
+    <button id="nao-btn" onclick="moveButton()">Não</button>
+  </div>
+
+  <script>
+    function moveButton() {
+      const naoBtn = document.getElementById('nao-btn');
+      const randomX = Math.random() * (window.innerWidth - naoBtn.clientWidth);
+      const randomY = Math.random() * (window.innerHeight - naoBtn.clientHeight);
+      naoBtn.style.left = `${randomX}px`;
+      naoBtn.style.top = `${randomY}px`;
+    }
+  </script>
+</body>
+</html>
